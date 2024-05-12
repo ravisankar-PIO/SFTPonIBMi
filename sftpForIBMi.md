@@ -36,7 +36,7 @@ In order to setup IBMi as the SFTP host, where we need to,
 
 - Use VS Code, ACS, or  WinSCP to download the file `id_rsa` to the laptop and place it in `C:\Users\<username>\.ssh` folder. If there is no .ssh folder in your laptop, then please create one!
 - Since I already have lot of keys in my .ssh folder, I am going to rename the file as `goldenkey`
-  ![goldnekey](images/image-3.png)
+  ![goldnekey](image-3.png)
 
 ## Setup IBMi as Host 
 We will be creating a separate IBMi user profile with limited security access for the SFTP file transfer purpose. Whoever making an SFTP connection to the IBMi using the new user profile will have the same level of security and file system access. So we need to decide what type of access are we going to provide to the SFTP client.
