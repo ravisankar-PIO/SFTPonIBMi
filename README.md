@@ -14,6 +14,7 @@ In order to setup IBMi as the SFTP host, where we need to,
   - [Full access Method](#full-access-method)
   - [Restricted Access Method](#restricted-access-method)
 - [Test the connection](#test-the-connection)
+- [References](#references)
 
 
 
@@ -124,7 +125,7 @@ If you're running V7R2 & above,
 <br>
 
 - Change the LOCALE parameter in the user profile to *NONE
-  - `system "CHGUSRPRF USRPRF(SSHTEST) LOCALE(*NONE)"`
+  - `system "CHGUSRPRF USRPRF(SFTPUSR1) LOCALE(*NONE)"`
 <br>
 
 - SSH Daemon need to be started using a QSECOFR user profile
@@ -133,7 +134,9 @@ If you're running V7R2 & above,
     >Note: The SSH daemon must be started with the QSECOFR user profile to activate the chroot function. Starting the SSH daemon with a profile that has QSECOFR authority will not activate the chroot function. A user profile with a UID of (0) is required to activate the chroot function. The QSECOFR user profile on the IBM i is shipped with a UID of (0).
 <br>
 
-- Create a HOME directory on the IBM i to store the user's SSH-related files. We will be sharing this folder to the client.
+- Check whether a HOME directory  is present for the SFTPUSR1 on the chroot.  We will be sharing this folder to the client. If not then, create one.
+  - `test -d /QOpenSys/QIBM/UserData/SC1/OpenSSH/chroot/home/sftpusr1 && echo dir_exists`. 
+  - If you get the response dir_exists, then go to the next step. Else run the below command.
   - `mkdir /QOpenSys/QIBM/UserData/SC1/OpenSSH/chroot/home/sftpusr1`
 <br>
 
@@ -199,3 +202,9 @@ If you're running V7R2 & above,
 - Once transfer is done, let's close the connection.
   - `bye`
 <br>
+
+
+## References
+1. [usage of pythont to automate sftp](https://github.com/richardschoen/PythonSamples/blob/master/ibmi/pysftpdownload.py)
+2. [automate sftp using expect](https://www.seidengroup.com/2022/12/27/automate-sftp-transfers-using-expect/)
+3. 
