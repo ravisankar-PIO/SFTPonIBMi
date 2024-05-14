@@ -25,9 +25,11 @@ In order to setup IBMi as the SFTP host, where we need to,
 
 - Enter the command below to enter the PASE Environment 
   - `Call QP2TERM` 
+<br>
 
 - Start by creating the keypairs by entering the command
   - `ssh-keygen -t RSA`
+<br>
 
   You will be asked for multiple questions for generating the keypairs. It's good to know what does these options mean.
   
