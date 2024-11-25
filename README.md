@@ -214,4 +214,7 @@ If you're running V7R2 & above,
 ## References
 1. [usage of pythont to automate sftp](https://github.com/richardschoen/PythonSamples/blob/master/ibmi/pysftpdownload.py)
 2. [automate sftp using expect](https://www.seidengroup.com/2022/12/27/automate-sftp-transfers-using-expect/)
-3. 
+3. [SSH Configuration](https://www.ibm.com/support/pages/configuring-ibm-i-sshd-server-use-public-key-authentication)
+4. [Example Batch SFTP Script](https://www.ibm.com/support/pages/example-batch-sftp-script)
+5. [Batch SFTP with pw based authentication](https://www.ibm.com/support/pages/batch-sftp-download-example-using-password-authentication)
+6. 
